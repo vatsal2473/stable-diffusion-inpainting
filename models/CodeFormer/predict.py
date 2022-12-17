@@ -18,7 +18,7 @@ from models.CodeFormer.basicsr.utils import imwrite, img2tensor, tensor2img
 from models.CodeFormer.basicsr.archs.rrdbnet_arch import RRDBNet
 from models.CodeFormer.basicsr.utils.realesrgan_utils import RealESRGANer
 from models.CodeFormer.basicsr.utils.registry import ARCH_REGISTRY
-from facelib.utils.face_restoration_helper import FaceRestoreHelper
+from models.CodeFormer.facelib.utils.face_restoration_helper import FaceRestoreHelper
 
 
 class Predictor(BasePredictor):

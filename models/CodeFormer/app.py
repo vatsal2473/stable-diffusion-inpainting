@@ -15,8 +15,8 @@ from torchvision.transforms.functional import normalize
 
 from models.CodeFormer.basicsr.utils import imwrite, img2tensor, tensor2img
 from models.CodeFormer.basicsr.utils.download_util import load_file_from_url
-from facelib.utils.face_restoration_helper import FaceRestoreHelper
-from facelib.utils.misc import is_gray
+from models.CodeFormer.facelib.utils.face_restoration_helper import FaceRestoreHelper
+from models.CodeFormer.facelib.utils.misc import is_gray
 from models.CodeFormer.basicsr.archs.rrdbnet_arch import RRDBNet
 from models.CodeFormer.basicsr.utils.realesrgan_utils import RealESRGANer
 

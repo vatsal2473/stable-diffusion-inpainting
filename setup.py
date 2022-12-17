@@ -28,10 +28,10 @@ cmd1 = 'python models/CodeFormer/basicsr/setup.py develop'
 p1 = subprocess.call(cmd1, shell=True)
 
 
-cmd1 = 'python models/CodeFormer/scripts/download_pretrained_models.py models/CodeFormer/facelib'
+cmd1 = 'python models/CodeFormer/scripts/download_pretrained_models.py facelib'
 p1 = subprocess.call(cmd1, shell=True)
 
-cmd1 = 'python models/CodeFormer/scripts/download_pretrained_models.py models/CodeFormer/CodeFormer'
+cmd1 = 'python models/CodeFormer/scripts/download_pretrained_models.py CodeFormer'
 p1 = subprocess.call(cmd1, shell=True)
 
 cmd1 = 'curl -O https://pagekite.net/pk/pagekite.py'
