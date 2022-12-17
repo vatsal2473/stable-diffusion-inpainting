@@ -24,6 +24,16 @@ p1 = subprocess.call(cmd1, shell=True)
 cmd1 = 'pip install accelerate'
 p1 = subprocess.call(cmd1, shell=True)
 
+cmd1 = 'python models/CodeFormer/basicsr/setup.py'
+p1 = subprocess.call(cmd1, shell=True)
+
+
+cmd1 = 'python models/CodeFormer/scripts/download_pretrained_models.py models/CodeFormer/facelib'
+p1 = subprocess.call(cmd1, shell=True)
+
+cmd1 = 'python models/CodeFormer/scripts/download_pretrained_models.py models/CodeFormer/CodeFormer'
+p1 = subprocess.call(cmd1, shell=True)
+
 cmd1 = 'curl -O https://pagekite.net/pk/pagekite.py'
 p1 = subprocess.call(cmd1, shell=True)
 

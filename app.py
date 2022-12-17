@@ -1,6 +1,6 @@
 from flask import Flask, flash, request, redirect, url_for, render_template, jsonify
 from flask_cors import CORS, cross_origin
-from src import load_models, inpaint, helper_functions
+from src import load_models, inpaint, helper_functions, restore_face
 import requests
 
 global pipe
@@ -8,6 +8,14 @@ pipe = load_models.load_stable_diffusion_inpainting_model()
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route('/face-restoration', methods=['GET', 'POST'])
+def restore():
+    if request.method == "POST":
+        image = request.files['image']
+        image.save('input/image.png')
+    
+    restore_face.restore('input/image.png', 'output')
 
 @app.route('/inpaint', methods=['GET', 'POST'])
 def inpaint_image():
