@@ -7,10 +7,10 @@ from copy import deepcopy
 from functools import partial
 from os import path as osp
 
-from basicsr.data.prefetch_dataloader import PrefetchDataLoader
-from basicsr.utils import get_root_logger, scandir
-from basicsr.utils.dist_util import get_dist_info
-from basicsr.utils.registry import DATASET_REGISTRY
+from models.CodeFormer.basicsr.data.prefetch_dataloader import PrefetchDataLoader
+from models.CodeFormer.basicsr.utils import get_root_logger, scandir
+from models.CodeFormer.basicsr.utils.dist_util import get_dist_info
+from models.CodeFormer.basicsr.utils.registry import DATASET_REGISTRY
 
 __all__ = ['build_dataset', 'build_dataloader']
 

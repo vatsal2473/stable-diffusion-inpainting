@@ -6,7 +6,7 @@ from PIL import Image
 import torch
 from torch.hub import download_url_to_file, get_dir
 from urllib.parse import urlparse
-# from basicsr.utils.download_util import download_file_from_google_drive
+# from models.CodeFormer.basicsr.utils.download_util import download_file_from_google_drive
 import gdown
 
 

@@ -9,11 +9,11 @@ import time
 import torch
 from torch.utils.cpp_extension import BuildExtension, CppExtension, CUDAExtension
 
-version_file = './basicsr/version.py'
+version_file = 'models/CodeFormer/basicsr/version.py'
 
 
 def readme():
-    with open('README.md', encoding='utf-8') as f:
+    with open('models/CodeFormer/README.md', encoding='utf-8') as f:
         content = f.read()
     return content
 
@@ -66,7 +66,7 @@ __gitsha__ = '{}'
 version_info = ({})
 """
     sha = get_hash()
-    with open('./basicsr/VERSION', 'r') as f:
+    with open('models/CodeFormer/basicsr/VERSION', 'r') as f:
         SHORT_VERSION = f.read().strip()
     VERSION_INFO = ', '.join([x if x.isdigit() else f'"{x}"' for x in SHORT_VERSION.split('.')])
 
@@ -107,7 +107,7 @@ def make_cuda_ext(name, module, sources, sources_cuda=None):
         extra_compile_args=extra_compile_args)
 
 
-def get_requirements(filename='requirements.txt'):
+def get_requirements(filename='models/CodeFormer/requirements.txt'):
     with open(os.path.join('.', filename), 'r') as f:
         requires = [line.replace('\n', '') for line in f.readlines()]
     return requires
@@ -136,6 +136,7 @@ if __name__ == '__main__':
     else:
         ext_modules = []
 
+    
     write_version_py()
     setup(
         name='basicsr',

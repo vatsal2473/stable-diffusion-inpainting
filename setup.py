@@ -24,7 +24,7 @@ p1 = subprocess.call(cmd1, shell=True)
 cmd1 = 'pip install accelerate'
 p1 = subprocess.call(cmd1, shell=True)
 
-cmd1 = 'python models/CodeFormer/basicsr/setup.py'
+cmd1 = 'python models/CodeFormer/basicsr/setup.py develop'
 p1 = subprocess.call(cmd1, shell=True)
 
 
@@ -45,3 +45,4 @@ p1 = subprocess.call(cmd1, shell=True)
 
 print("\nhuggingface-cli login\n")
 
+# apt-get install ffmpeg libsm6 libxext6  -y
