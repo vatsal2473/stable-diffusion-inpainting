@@ -25,7 +25,7 @@ def inpaint_image():
         grid.save('output/grid.png')
 
         files = {
-            'file': open('input/image.png', 'rb'),
+            'file': open('output/grid.png', 'rb'),
         }
         response = requests.post('https://file.io', files=files)
 
