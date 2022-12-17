@@ -3,8 +3,8 @@ from flask_cors import CORS, cross_origin
 from src import load_models, inpaint, helper_functions
 import requests
 
-# global pipe
-# pipe = load_models.load_stable_diffusion_inpainting_model()
+global pipe
+pipe = load_models.load_stable_diffusion_inpainting_model()
 
 app = Flask(__name__)
 CORS(app)
