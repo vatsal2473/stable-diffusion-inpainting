@@ -73,17 +73,24 @@ def inpaint_image():
 
     try:
         images = inpaint.stable_diffusion_inpaint(prompt, pipe, image_path='input/image.png', mask_path='input/mask_image.png')
-        grid = helper_functions.image_grid(images, 1, 3)
-        grid.save('output/grid.png')
+        
+        li = []
+        for i, img in enumerate(images):
+            name = 'output/image{0}.png'.format(i)
+            img.save(name)
+        # grid = helper_functions.image_grid(images, 1, 3)
+        # grid.save('output/grid.png')
 
-        files = {
-            'file': open('output/grid.png', 'rb'),
-        }
 
-        response = requests.post('https://tmpfiles.org/api/v1/upload', files=files)
+            files = {
+                'file': open(name, 'rb'),
+            }
+
+            response = requests.post('https://tmpfiles.org/api/v1/upload', files=files)
+            li.append(response.json()['data']['url'])
 
         res = {}
-        res['url'] = response.json()['data']['url']
+        res['url'] = li
         return res
 
     except Exception as e:
