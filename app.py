@@ -64,10 +64,16 @@ def inpaint_restore():
 @app.route('/inpaint', methods=['GET', 'POST'])
 def inpaint_image():
     if request.method == "POST":
-        image = request.files['image']
-        mask_image = request.files['mask_image']
-        image.save('input/image.png')
-        mask_image.save('input/mask_image.png')
+        # image = request.files['image']
+        # mask_image = request.files['mask_image']
+        # image.save('input/image.png')
+        # mask_image.save('input/mask_image.png')
+
+        image = request.form.get('image')
+        helper_functions.get_image_from_url(image, 'input/image.png')
+        mask_image = request.form.get('mask_image')
+        helper_functions.get_image_from_url(mask_image, 'input/mask_image.png')
+
         prompt = request.form.get('prompt')
         print("====Data Received====")
 
