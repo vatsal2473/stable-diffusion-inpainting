@@ -7,12 +7,14 @@ git clone
 cd 
 
 Step - 1 (Install pip if not  already there)
+
 ```sudo apt install python3-pip```
 
 Step - 2 (install virtulenv using pip and create a virtual environment name myenv then activate that virtual environment)
-pip install virtualenv
-virtualenv myenv
-source myenv/bin/activate
+
+`pip install virtualenv`
+`virtualenv myenv`
+`source myenv/bin/activate`
 
 Step - 3 (run the setup file)
 python setup.py
