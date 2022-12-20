@@ -1,6 +1,4 @@
-## flask api
-
-how to setup the flask api on ubuntu servers ?
+## Setup Instructions for api
 
 Step - 1 (clone the repo and move inside the directory)
 
