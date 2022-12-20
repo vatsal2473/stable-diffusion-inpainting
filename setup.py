@@ -3,7 +3,9 @@ import os
 
 # Creating folders
 paths = ['input',
-         'output']
+         'output',
+         'input/swinir',
+         'output/swinir']
 
 for i in range(len(paths)):
     if not os.path.exists(paths[i]):
@@ -22,6 +24,9 @@ cmd1 = 'pip install git+https://github.com/huggingface/diffusers.git'
 p1 = subprocess.call(cmd1, shell=True)
 
 cmd1 = 'pip install accelerate'
+p1 = subprocess.call(cmd1, shell=True)
+
+cmd1 = 'pip install timm'
 p1 = subprocess.call(cmd1, shell=True)
 
 cmd1 = 'python models/CodeFormer/basicsr/setup.py develop'

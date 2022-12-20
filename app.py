@@ -1,6 +1,6 @@
 from flask import Flask, flash, request, redirect, url_for, render_template, jsonify
 from flask_cors import CORS, cross_origin
-from src import load_models, inpaint, helper_functions, restore_face
+from src import load_models, inpaint, helper_functions, restore_face, super_resolution
 import requests
 
 global pipe
@@ -8,6 +8,39 @@ pipe = load_models.load_stable_diffusion_inpainting_model()
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route('/super-resolution', methods=['GET', 'POST'])
+def resolution():
+    if request.method == "POST":
+        print("hi")
+        image = request.files['image']
+        image.save('input/swinir/image.png')
+        
+    try:
+        super_resolution.increase_resolution('input/swinir', 'output/swinir')
+                
+            
+        files = {
+            'file': open('output/swinir/swinir_real_sr_x4/image_SwinIR.png', 'rb'),
+        }
+
+        response = requests.post('https://file.io', files=files)
+
+        res = {}
+        res['url'] = response.json()['link']
+        response = requests.post('https://tmpfiles.org/api/v1/upload', files=files)
+
+        res = {}
+        res['url'] = response.json()['data']['url']
+
+        return res
+    
+    except Exception as e:
+        print(e)
+    
+    except Exception as e:
+        print(e)
+
 
 @app.route('/face-restoration', methods=['GET', 'POST'])
 def restore():

@@ -21,20 +21,22 @@ def increase_resolution(input_folder, output_folder):
     for f in filelist:
         os.remove(f)
 
-    upload_folder = input_folder
     result_folder = 'models/Real_ESRGAN/results'
+    
 
-    if os.path.isdir(upload_folder):
-        shutil.rmtree(upload_folder)
     if os.path.isdir(result_folder):
         shutil.rmtree(result_folder)
-    os.mkdir(upload_folder)
     os.mkdir(result_folder)
+    
+    if os.path.isdir(output_folder):
+        shutil.rmtree(output_folder)
+    os.mkdir(output_folder)
 
 
     # upload files in folder
     
-    images = os.listdir('input/swinir')
+    images = os.listdir(input_folder)
+    print(images)
     for i in range(len(images)):
         src = os.path.join('input/swinir', images[i])
         dst = os.path.join('models/Real_ESRGAN/BSRGAN/testsets/RealSRSet', images[i])
