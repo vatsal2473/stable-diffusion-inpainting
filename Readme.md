@@ -3,12 +3,13 @@
 how to setup the flask api on ubuntu servers ?
 
 Step - 1 (clone the repo and move inside the directory)
-git clone 
-cd 
+
+`git clone https://github.com/felvin-search/inpainting-flask-api.git`
+`cd inpainting-flask-api`
 
 Step - 1 (Install pip if not  already there)
 
-```sudo apt install python3-pip```
+`sudo apt install python3-pip`
 
 Step - 2 (install virtulenv using pip and create a virtual environment name myenv then activate that virtual environment)
 
