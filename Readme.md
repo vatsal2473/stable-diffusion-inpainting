@@ -13,11 +13,15 @@ Step - 1 (Install pip if not  already there)
 Step - 2 (install virtulenv using pip and create a virtual environment name myenv then activate that virtual environment)
 
 `pip install virtualenv`
+
 `virtualenv myenv`
+
 `source myenv/bin/activate`
 
 Step - 3 (run the setup file)
-python setup.py
+
+`python setup.py`
 
 Step - 4 (run the flask api)
-python app.py
+
+`python app.py`
