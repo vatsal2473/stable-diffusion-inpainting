@@ -5,6 +5,7 @@ how to setup the flask api on ubuntu servers ?
 Step - 1 (clone the repo and move inside the directory)
 
 `git clone https://github.com/felvin-search/inpainting-flask-api.git`
+
 `cd inpainting-flask-api`
 
 Step - 1 (Install pip if not  already there)
